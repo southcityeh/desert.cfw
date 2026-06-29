@@ -1,0 +1,1833 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Desert CFW | Official Rules</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+
+background:#060b18;
+
+color:white;
+
+overflow-x:hidden;
+
+background-image:
+
+radial-gradient(circle at 20% 20%,rgba(37,99,235,.28),transparent 30%),
+
+radial-gradient(circle at 80% 40%,rgba(59,130,246,.20),transparent 35%),
+
+radial-gradient(circle at 50% 90%,rgba(29,78,216,.18),transparent 40%);
+
+}
+
+nav{
+
+position:fixed;
+
+top:35px;
+
+left:0;
+
+width:100%;
+
+padding:18px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+backdrop-filter:blur(20px);
+
+background:rgba(6,11,24,.70);
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+z-index:999;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+.logo img{
+
+width:55px;
+
+filter:drop-shadow(0 0 18px #3b82f6);
+
+}
+
+.logo h2{
+
+font-size:24px;
+
+font-weight:800;
+
+}
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+gap:35px;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#60a5fa;
+
+}
+
+/* ===== نهاية الجزء الأول ===== */
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:20px;
+
+}
+
+.hero img{
+
+width:180px;
+
+margin-bottom:30px;
+
+animation:float 3s ease-in-out infinite;
+
+filter:drop-shadow(0 0 35px #3b82f6);
+
+}
+
+.hero h1{
+
+font-size:72px;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+}
+
+.hero p{
+
+margin-top:20px;
+
+font-size:22px;
+
+opacity:.75;
+
+}
+
+button{
+
+margin-top:35px;
+
+padding:18px 42px;
+
+border:none;
+
+border-radius:14px;
+
+background:linear-gradient(90deg,#2563eb,#3b82f6);
+
+color:white;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+button:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 0 45px #2563eb;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+.rules{
+
+padding:120px 8%;
+
+}
+
+.rules h2{
+
+text-align:center;
+
+font-size:46px;
+
+margin-bottom:60px;
+
+}
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:18px;
+
+padding:30px;
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+border-color:#3b82f6;
+
+box-shadow:0 0 35px rgba(59,130,246,.5);
+
+}
+
+.card h3{
+
+margin-bottom:15px;
+
+color:#60a5fa;
+
+}
+
+.card p{
+
+opacity:.8;
+
+line-height:1.8;
+
+}
+
+footer{
+
+padding:40px;
+
+text-align:center;
+
+opacity:.6;
+
+}
+#search{
+
+width:100%;
+
+max-width:500px;
+
+display:block;
+
+margin:0 auto 50px;
+
+padding:18px;
+
+border:none;
+
+border-radius:14px;
+
+background:rgba(255,255,255,.08);
+
+color:white;
+
+font-size:17px;
+
+outline:none;
+
+backdrop-filter:blur(15px);
+
+}
+
+#search::placeholder{
+
+color:#b8c4d8;
+
+}
+#progress{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+height:4px;
+
+width:0;
+
+background:#3b82f6;
+
+z-index:5000;
+
+box-shadow:0 0 15px #3b82f6;
+
+}
+#topBtn{
+
+position:fixed;
+
+right:25px;
+
+bottom:25px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:#2563eb;
+
+color:white;
+
+font-size:24px;
+
+cursor:pointer;
+
+display:none;
+
+box-shadow:0 0 25px #2563eb;
+
+transition:.3s;
+
+z-index:9999;
+
+}
+
+#topBtn:hover{
+
+transform:scale(1.1);
+
+background:#3b82f6;
+
+}
+.hidden{
+opacity:0;
+transform:translateY(60px);
+transition:all .8s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+.stars{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+background-image:
+
+radial-gradient(white 1px, transparent 1px),
+
+radial-gradient(#60a5fa 1px, transparent 1px),
+
+radial-gradient(#93c5fd 2px, transparent 2px);
+
+background-size:80px 80px,120px 120px,180px 180px;
+
+animation:starsMove 80s linear infinite;
+
+opacity:.35;
+
+z-index:-1;
+
+}
+
+@keyframes starsMove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-800px);
+
+}
+
+}
+.menu-btn{
+
+display:none;
+
+font-size:32px;
+
+cursor:pointer;
+
+}
+
+@media(max-width:768px){
+
+.menu-btn{
+
+display:block;
+
+}
+
+nav ul{
+
+position:absolute;
+
+top:80px;
+
+left:0;
+
+width:100%;
+
+background:#08111f;
+
+flex-direction:column;
+
+padding:20px;
+
+display:none;
+
+}
+
+nav ul.active{
+
+display:flex;
+
+}
+
+}
+#loader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#060b18;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:99999;
+
+transition:1s;
+
+}
+
+#loader img{
+
+width:170px;
+
+animation:loaderFloat 2s infinite;
+
+filter:drop-shadow(0 0 30px #3b82f6);
+
+}
+
+#loader h1{
+
+margin-top:20px;
+
+font-size:42px;
+
+}
+
+#loader p{
+
+margin-top:10px;
+
+opacity:.7;
+
+}
+
+@keyframes loaderFloat{
+
+0%{transform:translateY(0);}
+
+50%{transform:translateY(-12px);}
+
+100%{transform:translateY(0);}
+
+}
+#cursorGlow{
+
+position:fixed;
+
+width:280px;
+
+height:280px;
+
+border-radius:50%;
+
+background:radial-gradient(circle,rgba(59,130,246,.25),transparent 70%);
+
+pointer-events:none;
+
+transform:translate(-50%,-50%);
+
+z-index:-1;
+
+transition:transform .05s linear;
+
+}
+.card{
+
+transform-style:preserve-3d;
+
+transition:
+transform .25s ease,
+box-shadow .25s ease,
+border-color .25s ease;
+
+}
+
+.card:hover{
+
+box-shadow:0 20px 50px rgba(37,99,235,.35);
+
+}
+.announcement{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:35px;
+background:linear-gradient(90deg,#0f172a,#1d4ed8,#0f172a);
+overflow:hidden;
+z-index:10000;
+display:flex;
+align-items:center;
+}
+
+.announcement-text{
+white-space:nowrap;
+font-size:14px;
+font-weight:700;
+color:white;
+animation:announcement 18s linear infinite;
+}
+
+@keyframes announcement{
+0%{
+transform:translateX(100%);
+}
+100%{
+transform:translateX(-100%);
+}
+}
+.stats{
+
+padding:100px 8%;
+
+}
+
+.stats h2{
+
+text-align:center;
+
+font-size:48px;
+
+margin-bottom:50px;
+
+font-weight:800;
+
+color:#ffffff;
+
+}
+
+.stats .cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+gap:30px;
+
+}
+
+.stats .card{
+
+text-align:center;
+
+padding:40px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+backdrop-filter:blur(20px);
+
+transition:.35s;
+
+}
+
+.stats .card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 40px rgba(37,99,235,.45);
+
+border-color:#3b82f6;
+
+}
+
+.stats .card h1{
+
+font-size:60px;
+
+margin-bottom:20px;
+
+}
+
+.stats .card h3{
+
+font-size:28px;
+
+margin-bottom:15px;
+
+color:#60a5fa;
+
+}
+
+.stats .card p{
+
+font-size:17px;
+
+opacity:.8;
+
+line-height:1.8;
+
+}
+.features{
+
+padding:100px 8%;
+
+}
+
+.features h2{
+
+text-align:center;
+
+font-size:48px;
+
+margin-bottom:50px;
+
+font-weight:800;
+
+}
+
+.features .cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.features .card{
+
+text-align:center;
+
+padding:35px;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+backdrop-filter:blur(20px);
+
+transition:.35s;
+
+}
+
+.features .card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 40px rgba(59,130,246,.45);
+
+border-color:#3b82f6;
+
+}
+
+.features .card h1{
+
+font-size:55px;
+
+margin-bottom:15px;
+
+}
+
+.features .card h3{
+
+color:#60a5fa;
+
+margin-bottom:15px;
+
+font-size:25px;
+
+}
+
+.features .card p{
+
+opacity:.8;
+
+line-height:1.8;
+
+}
+.gallery{
+
+padding:100px 8%;
+
+}
+
+.gallery h2{
+
+text-align:center;
+
+font-size:48px;
+
+margin-bottom:50px;
+
+}
+
+.gallery-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+}
+
+.gallery-grid img{
+
+width:100%;
+
+height:220px;
+
+object-fit:cover;
+
+border-radius:18px;
+
+transition:.35s;
+
+cursor:pointer;
+
+border:2px solid rgba(255,255,255,.08);
+
+}
+
+.gallery-grid img:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 0 35px rgba(59,130,246,.6);
+
+border-color:#3b82f6;
+
+}
+.socials{
+
+padding:100px 8%;
+
+}
+
+.socials h2{
+
+text-align:center;
+
+font-size:48px;
+
+margin-bottom:50px;
+
+}
+.footer{
+
+padding:70px 8%;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:50px;
+
+background:rgba(0,0,0,.25);
+
+border-top:1px solid rgba(255,255,255,.08);
+
+margin-top:100px;
+
+}
+
+.footer-logo img{
+
+width:80px;
+
+margin-bottom:20px;
+
+filter:drop-shadow(0 0 20px #3b82f6);
+
+}
+
+.footer-logo h2{
+
+font-size:30px;
+
+margin-bottom:15px;
+
+}
+
+.footer-logo p{
+
+opacity:.75;
+
+line-height:1.8;
+
+}
+
+.footer h3{
+
+margin-bottom:20px;
+
+color:#60a5fa;
+
+}
+
+.footer a{
+
+display:block;
+
+margin:12px 0;
+
+text-decoration:none;
+
+color:white;
+
+transition:.3s;
+
+}
+
+.footer a:hover{
+
+color:#60a5fa;
+
+padding-left:8px;
+
+}
+
+.footer-support p{
+
+margin:12px 0;
+
+opacity:.8;
+
+}
+
+.copyright{
+
+text-align:center;
+
+padding:25px;
+
+background:#04070f;
+
+opacity:.7;
+
+font-size:14px;
+
+}
+.accordion-section{
+
+padding:100px 8%;
+
+}
+
+.accordion-section h2{
+
+text-align:center;
+
+font-size:48px;
+
+margin-bottom:40px;
+
+}
+
+.accordion-btn{
+
+width:100%;
+
+padding:20px;
+
+margin-top:15px;
+
+background:rgba(255,255,255,.06);
+
+border:1px solid rgba(255,255,255,.08);
+
+color:white;
+
+font-size:20px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+border-radius:15px;
+
+text-align:left;
+
+transition:.3s;
+
+}
+
+.accordion-btn:hover{
+
+background:rgba(59,130,246,.18);
+
+}
+
+.accordion-content{
+
+display:none;
+
+padding:25px;
+
+background:rgba(255,255,255,.04);
+
+border-radius:0 0 15px 15px;
+
+margin-bottom:15px;
+
+}
+
+.accordion-content ul{
+
+padding-left:20px;
+
+line-height:2;
+
+}
+#lightbox{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.92);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999999;
+
+}
+
+#lightbox img{
+
+max-width:90%;
+
+max-height:90%;
+
+border-radius:18px;
+
+box-shadow:0 0 60px rgba(59,130,246,.7);
+
+}
+
+#closeLightbox{
+
+position:absolute;
+
+top:25px;
+
+right:40px;
+
+font-size:55px;
+
+cursor:pointer;
+
+color:white;
+
+}
+</style>
+
+</head>
+
+<body>
+    <div class="announcement">
+    <div class="announcement-text">
+        🚨 Welcome to Desert CFW • Read The Rules Before Playing • Join Our Discord • Enjoy The Best FiveM Experience 🚨
+    </div>
+</div>
+    <div id="cursorGlow"></div>
+    <div id="loader">
+
+<img src="logo.png">
+
+<h1>Desert CFW</h1>
+
+<p>Loading...</p>
+
+</div>
+    <div class="stars"></div>
+    <div id="progress"></div>
+
+<nav>
+
+<div class="logo">
+<img src="logo.png" alt="Logo">
+<h2>Desert CFW</h2>
+</div>
+<div class="menu-btn" onclick="toggleMenu()">
+☰
+</div>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#server-status">Status</a></li>
+<li><a href="#features">Features</a></li>
+<li><a href="#rules">Rules</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div>
+
+<img src="logo.png" alt="Logo">
+
+<h1>DESERT CFW</h1>
+
+<p>The Ultimate FiveM Roleplay Experience</p>
+
+<button onclick="window.open('https://discord.gg/kP9CzEwd4h')">
+
+Join Discord
+
+</button>
+
+</div>
+</section>
+
+<section class="stats">
+
+<h2>Why Desert CFW?</h2>
+
+<div class="cards">
+
+<div class="card hidden">
+<h1 class="counter" data-target="24">0</h1>
+<h3>Hours Support</h3>
+<p>Support available every day.</p>
+</div>
+
+<div class="card hidden">
+<h1 class="counter" data-target="100">0</h1>
+<h3>Custom Scripts</h3>
+<p>Unique features for better roleplay.</p>
+</div>
+
+<div class="card hidden">
+<h1 class="counter" data-target="99">0</h1>
+<h3>Server Uptime %</h3>
+<p>Stable and optimized performance.</p>
+</div>
+
+</div>
+
+<div class="card hidden">
+<h1>⏰</h1>
+<h3>24/7 Support</h3>
+<p>Support is available 24 hours a day to assist with reports and questions.</p>
+</div>
+
+</div>
+
+</section>
+<section class="features" id="features">
+
+<h2>Server Features</h2>
+
+<div class="cards">
+
+<div class="card hidden">
+<h1>🚔</h1>
+<h3>Realistic Roleplay</h3>
+<p>Enjoy immersive roleplay with realistic rules, scenarios, and high-quality experiences.</p>
+</div>
+
+<div class="card hidden">
+<h1>⚡</h1>
+<h3>Optimized Performance</h3>
+<p>Our server is optimized for smooth gameplay with stable performance and minimal lag.</p>
+</div>
+
+<div class="card hidden">
+<h1>🔒</h1>
+<h3>Anti-Cheat Protection</h3>
+<p>Advanced protection systems help keep gameplay fair and enjoyable for everyone.</p>
+</div>
+
+<div class="card hidden">
+<h1>🎭</h1>
+<h3>Custom Scripts</h3>
+<p>Unique custom features designed to provide a fresh and enjoyable roleplay experience.</p>
+</div>
+
+</div>
+
+</section>
+<section class="rules" id="rules">
+
+<h2>Server Rules</h2>
+
+<input
+id="search"
+type="text"
+placeholder="🔍 Search rules..."
+onkeyup="searchRules()">
+
+<div class="cards">
+
+<div class="card hidden">
+<h3>Respect Everyone</h3>
+<p>Treat all players and staff with respect at all times.</p>
+</div>
+
+<div class="card hidden">
+<h3>No Random Deathmatch</h3>
+<p>Do not kill players without a valid roleplay reason.</p>
+</div>
+
+<div class="card hidden">
+<h3>No Vehicle Deathmatch</h3>
+<p>Using vehicles as weapons is strictly prohibited.</p>
+</div>
+
+<div class="card hidden">
+<h3>Fear RP</h3>
+<p>Your character should value their life in dangerous situations.</p>
+</div>
+
+<div class="card hidden">
+<h3>Powergaming</h3>
+<p>Do not perform unrealistic actions that your character couldn't do.</p>
+</div>
+
+<div class="card hidden">
+<h3>Metagaming</h3>
+<p>Never use information obtained outside the game in roleplay.</p>
+</div>
+
+</div>
+
+</section>
+<section class="features" id="faq">
+
+<h2>Frequently Asked Questions</h2>
+
+<div class="cards">
+
+<div class="card hidden">
+<h3>🎮 How do I join the server?</h3>
+<p>Click the Join Discord button and follow the instructions to connect.</p>
+</div>
+
+<div class="card hidden">
+<h3>📜 Where can I read the rules?</h3>
+<p>Scroll down to the Server Rules section to view all rules.</p>
+</div>
+
+<div class="card hidden">
+<h3>🛡️ Need Help?</h3>
+<p>Open a support ticket in our Discord server and our staff will help you.</p>
+</div>
+
+</div>
+
+</section>
+<section class="features">
+
+<h2>Join Desert CFW</h2>
+
+<div class="cards">
+
+<div class="card hidden">
+
+<h1>🎮</h1>
+
+<h3>Connect Now</h3>
+
+<p>Join our FiveM server instantly using the button below.</p>
+
+<button onclick="navigator.clipboard.writeText('connect y9v4ezy'); alert('Connect command copied!')">
+📋 Copy Connect
+</button>
+
+<br><br>
+
+<button onclick="window.open('https://discord.gg/kP9CzEwd4h')">
+💬 Join Discord
+</button>
+
+</div>
+
+</div>
+
+</section>
+<section class="stats" id="server-status">
+
+<h2>Server Status</h2>
+
+<div class="cards">
+
+<div class="card hidden">
+
+<h1>🟢</h1>
+
+<h3>Server Status</h3>
+
+<p>Online & Ready to Play</p>
+
+</div>
+
+<div class="card hidden">
+
+<h1>👥</h1>
+
+<h3>Players</h3>
+
+<p>Growing Every Day</p>
+
+</div>
+
+<div class="card hidden">
+
+<h1>🌍</h1>
+
+<h3>Connection</h3>
+
+<p>connect y9v4ezy</p>
+
+<button onclick="navigator.clipboard.writeText('connect y9v4ezy');alert('Copied!')">
+📋 Copy
+</button>
+
+</div>
+
+</div>
+
+</section>
+<section class="features">
+
+<h2>How To Join</h2>
+
+<div class="cards">
+
+<div class="card hidden">
+
+<h1>1️⃣</h1>
+
+<h3>Join Discord</h3>
+
+<p>Join our official Discord server.</p>
+
+<button onclick="window.open('https://discord.gg/kP9CzEwd4h')">
+Join
+</button>
+
+</div>
+
+<div class="card hidden">
+
+<h1>2️⃣</h1>
+
+<h3>Copy Connect</h3>
+
+<p>Copy the server connection command.</p>
+
+<button onclick="navigator.clipboard.writeText('connect y9v4ezy');alert('Copied!')">
+Copy
+</button>
+
+</div>
+
+<div class="card hidden">
+
+<h1>3️⃣</h1>
+
+<h3>Open FiveM</h3>
+
+<p>Press F8 and paste:</p>
+
+<p style="color:#60a5fa;font-weight:bold;">
+connect y9v4ezy
+</p>
+
+</div>
+
+</div>
+
+</section>
+<section class="stats">
+
+<h2>Join Our Community</h2>
+
+<div class="cards">
+
+<div class="card hidden">
+
+<h1>💬</h1>
+
+<h3>Discord Server</h3>
+
+<p>Join our official Discord community for support, updates and announcements.</p>
+
+<button onclick="window.open('https://discord.gg/kP9CzEwd4h')">
+
+Join Discord
+
+</button>
+
+</div>
+
+<div class="card hidden">
+
+<h1>🎮</h1>
+
+<h3>Server Connect</h3>
+
+<p style="color:#60a5fa;font-weight:bold;">connect y9v4ezy</p>
+
+<button onclick="navigator.clipboard.writeText('connect y9v4ezy');alert('Copied!')">
+
+Copy Command
+
+</button>
+
+</div>
+
+<div class="card hidden">
+
+<h1>⭐</h1>
+
+<h3>Desert CFW</h3>
+
+<p>Experience high-quality roleplay with custom systems and professional management.</p>
+
+</div>
+
+</div>
+
+</section>
+<section class="features">
+
+<h2>Meet Our Staff</h2>
+
+<div class="cards">
+
+<div class="card hidden">
+
+<h1>👑</h1>
+
+<h3>Founder</h3>
+
+<p>Leading Desert CFW with passion and continuous development.</p>
+
+</div>
+
+<div class="card hidden">
+
+<h1>🛡️</h1>
+
+<h3>Management</h3>
+
+<p>Managing the server, handling reports, and ensuring a fair experience.</p>
+
+</div>
+
+<div class="card hidden">
+
+<h1>⚖️</h1>
+
+<h3>Administrators</h3>
+
+<p>Monitoring gameplay, resolving issues, and enforcing server rules.</p>
+
+</div>
+
+</div>
+
+</section>
+<section class="features">
+
+<h2>Why Choose Desert CFW?</h2>
+
+<div class="cards">
+
+<div class="card hidden">
+
+<h1>⚡</h1>
+
+<h3>Optimized Server</h3>
+
+<p>High performance with smooth gameplay and low latency.</p>
+
+</div>
+
+<div class="card hidden">
+
+<h1>🚓</h1>
+
+<h3>Serious Roleplay</h3>
+
+<p>Professional roleplay experience with realistic systems.</p>
+
+</div>
+
+<div class="card hidden">
+
+<h1>🔐</h1>
+
+<h3>Advanced Security</h3>
+
+<p>Powerful anti-cheat systems keep the server fair for everyone.</p>
+
+</div>
+
+<div class="card hidden">
+
+<h1>🎁</h1>
+
+<h3>Frequent Updates</h3>
+
+<p>New scripts, vehicles, events and improvements every week.</p>
+
+</div>
+
+</div>
+
+</section>
+<section class="gallery">
+
+<h2>Server Gallery</h2>
+
+<div class="gallery-grid">
+
+<img src="images/city.jpg" alt="Gallery">
+
+<img src="images/police.jpg" alt="Gallery">
+
+<img src="images/cars.jpg" alt="Gallery">
+
+<img src="images/event.jpg" alt="Gallery">
+
+</div>
+
+</section>
+<section class="socials">
+
+<h2>Stay Connected</h2>
+
+<div class="cards">
+
+<div class="card hidden">
+
+<h1>💬</h1>
+
+<h3>Discord</h3>
+
+<p>Join our community and stay updated.</p>
+
+<button onclick="window.open('https://discord.gg/kP9CzEwd4h')">
+Join Discord
+</button>
+
+</div>
+
+<div class="card hidden">
+
+<h1>🎮</h1>
+
+<h3>FiveM</h3>
+
+<p>Copy the connect command and join instantly.</p>
+
+<button onclick="navigator.clipboard.writeText('connect y9v4ezy');alert('Copied!')">
+Copy Connect
+</button>
+
+</div>
+
+<div class="card hidden">
+
+<h1>📢</h1>
+
+<h3>Announcements</h3>
+
+<p>Follow all server updates and new events.</p>
+
+</div>
+
+</div>
+
+</section>
+<footer class="footer">
+
+<div class="footer-logo">
+
+<img src="logo.png" alt="Logo">
+
+<h2>Desert CFW</h2>
+
+<p>The Ultimate FiveM Roleplay Experience.</p>
+
+</div>
+
+<div class="footer-links">
+
+<h3>Quick Links</h3>
+
+<a href="#">Home</a>
+
+<a href="#rules">Rules</a>
+
+<a href="#">Features</a>
+
+<a href="https://discord.gg/kP9CzEwd4h" target="_blank">Discord</a>
+
+</div>
+
+<div class="footer-support">
+
+<h3>Support</h3>
+
+<p>🛡️ Professional Staff</p>
+
+<p>⏰ 24/7 Support</p>
+
+<p>🎮 FiveM Roleplay Server</p>
+
+</div>
+
+</footer>
+
+<div class="copyright">
+
+© 2026 Desert CFW • All Rights Reserved.
+
+</div>
+<button id="topBtn" onclick="topFunction()">↑</button>
+<script>
+
+
+function searchRules(){
+
+let input=document.getElementById("search").value.toLowerCase();
+
+document.querySelectorAll(".rules .card").forEach(card=>{
+
+card.style.display=
+card.innerText.toLowerCase().includes(input)
+?"block":"none";
+
+});
+
+}
+window.onscroll=function(){
+
+let winScroll=document.documentElement.scrollTop;
+
+let height=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+
+document.getElementById("progress").style.width=(winScroll/height)*100+"%";
+
+}
+const topBtn=document.getElementById("topBtn");
+
+window.addEventListener("scroll",()=>{
+
+if(document.documentElement.scrollTop>300){
+
+topBtn.style.display="block";
+
+}else{
+
+topBtn.style.display="none";
+
+}
+
+});
+
+function topFunction(){
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+}   
+const observer=new IntersectionObserver((entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+});
+
+document.querySelectorAll(".card").forEach(card=>{
+
+observer.observe(card);
+
+});
+function toggleMenu(){
+
+document.querySelector("nav ul").classList.toggle("active");
+
+}
+window.addEventListener("load",()=>{
+
+setTimeout(()=>{
+
+document.getElementById("loader").style.opacity="0";
+
+document.getElementById("loader").style.visibility="hidden";
+
+},1800);
+
+});
+const glow=document.getElementById("cursorGlow");
+
+document.addEventListener("mousemove",(e)=>{
+
+glow.style.left=e.clientX+"px";
+
+glow.style.top=e.clientY+"px";
+
+});
+document.querySelectorAll(".card").forEach(card=>{
+
+card.addEventListener("mousemove",(e)=>{
+
+const rect=card.getBoundingClientRect();
+
+const x=e.clientX-rect.left;
+
+const y=e.clientY-rect.top;
+
+const rotateX=((rect.height/2)-y)/10;
+
+const rotateY=(x-(rect.width/2))/10;
+
+card.style.transform=
+`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+});
+
+card.addEventListener("mouseleave",()=>{
+
+card.style.transform=
+"perspective(1000px) rotateX(0deg) rotateY(0deg)";
+
+});
+
+});
+document.querySelectorAll(".accordion-btn").forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+const content=button.nextElementSibling;
+
+if(content.style.display==="block"){
+
+content.style.display="none";
+
+}else{
+
+content.style.display="block"; 
+
+
+}
+
+});
+
+});
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=document.getElementById("lightboxImg");
+
+document.querySelectorAll(".gallery img").forEach(img=>{
+
+img.onclick=()=>{
+
+lightbox.style.display="flex";
+lightboxImg.src=img.src;
+
+};
+
+});
+
+document.getElementById("closeLightbox").onclick=()=>{
+
+lightbox.style.display="none";
+
+};
+
+lightbox.onclick=(e)=>{
+
+if(e.target===lightbox){
+
+lightbox.style.display="none";
+
+}
+
+};
+</script>
+<div id="lightbox">
+
+<span id="closeLightbox">&times;</span>
+
+<img id="lightboxImg">
+
+</div>
+</body>
+
+</html>
